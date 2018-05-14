@@ -41,6 +41,9 @@ def playWave(tFile):
     p.terminate()
 
 
+
+
+
 def playWavebyCallback(tFile):
     """PyAudio Example: Play a wave file (callback version)."""
 
@@ -48,11 +51,15 @@ def playWavebyCallback(tFile):
 
     # instantiate PyAudio (1)
     p = pyaudio.PyAudio()
+    # print p.get_default_output_device_info()
 
+    lpcm = open(u"temp.pcm","wb")
     # define callback (2)
     def callback(in_data, frame_count, time_info, status):
-        data = wf.readframes(frame_count)
-        return (data, pyaudio.paContinue)
+          data = wf.readframes(frame_count)
+          if lpcm is not None:
+              lpcm.write(data)
+          return (data, pyaudio.paContinue)
 
     # open stream using callback (3)
     stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
@@ -72,46 +79,29 @@ def playWavebyCallback(tFile):
     stream.stop_stream()
     stream.close()
     wf.close()
-
+    lpcm.close()
     # close PyAudio (7)
     p.terminate()
 
-import pyaudio
-import numpy as np
-import pylab
-import time
-
-def visualizeMusic():
-    RATE = 44100
-    CHUNK = int(RATE/20) # RATE/number of updates per second
-
-    p = pyaudio.PyAudio()
-    stream = p.open(format=pyaudio.paInt16, channels=1, rate=RATE,
-                    input=True, frames_per_buffer=CHUNK)
-    for i in range(int(20 * RATE / CHUNK)):
-        # for 10 seconds
-        sound_plot(stream)
-    stream.stop_stream()
-    stream.close()
-    p.terminate()
 
 
-def sound_plot(stream):
-    t1 = time.time()  # time starting
-    data = np.fromstring(stream.read(CHUNK), dtype=np.int16)
-    pylab.plot(data)
-    pylab.title(i)
-    pylab.grid()
-    pylab.axis([0, len(data), -2 ** 8, 2 ** 8])
-    pylab.savefig("sound.png", dpi=50)
-    pylab.show(block=False)
-    time.sleep(0.5)
-    pylab.close('all')
-    print("took %.2f ms." % (time.time() - t1) * 1000)
+class MainTest():
+    @staticmethod
+    def TestAudioPlay():
+        lFile = u"TestAudio.WAV"
+        playWave(lFile)
+        pass
 
+    @staticmethod
+    def TestAudioPlayCallbk():
+        lFile = u"TestAudio.WAV"
+        playWavebyCallback(lFile)
+        pass
 
 
 
 
 if __name__ == "__main__":
     print os.getcwd()
+    # MainTest.TestAudioPlay()
+    MainTest.TestAudioPlayCallbk()
