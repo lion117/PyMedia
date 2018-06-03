@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import sys, os, time
+import os
 
 import PIL.Image
 import cv2
@@ -53,8 +53,8 @@ def DisplayCameraInOne():
         imgList = []
         imgList.append(convertCvToPil(frame))
         imgList.append(convertCvToPil(frame2))
-        import ImageCompose
-        tarImg = ImageCompose.imageJiontByRaw(imgList , width ,height,ImageCompose.OptImg.horizontal)
+        from image import ImageCompose
+        tarImg = ImageCompose.imageJiontByRaw(imgList, width, height, ImageCompose.OptImg.horizontal)
 
         # show a frame
         cv2.imshow("capture", tarImg)
