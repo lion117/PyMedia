@@ -20,20 +20,20 @@ class Main():
             (lRet , lValue)= image.ImageMatch.isImageDiffMuch(lScreenShoot, lTemplate)
             if lRet is True:
                 time.sleep(2)
-                print (u"skip diff value %d  current times %d"%(lValue, lIndex))
+                printOnce (u"skip diff value %d  current times %d"%(lValue, lIndex))
                 continue
             else:
                 AndroidOpt.clickScreen()
                 time.sleep(2)
             lIndex +=1
-            print (u" %d Times"%(lIndex))
+            printOnce (u" %d Times"%(lIndex))
 
         print (u"done %d"%(lIndex))
 
 
 def printOnce(tInfo):
-    print u"\n",
-    print (tInfo)
+    print u"\r",
+    print tInfo,
 
 
 class MainTest():
@@ -45,5 +45,5 @@ class MainTest():
 
 if __name__ == "__main__":
     # print os.getcwd()
-    # Main.run()
-    MainTest.testPrint()
+    Main.run()
+    # MainTest.testPrint()
