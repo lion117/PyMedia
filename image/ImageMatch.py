@@ -150,14 +150,14 @@ class MainTest():
     @staticmethod
     def testLocateImage():
         lSrc = u"game.png"
-        lTarget  = u"test/continue.png"
+        lTarget  = u"img/continue.png"
         print locateImage(lSrc, lTarget)
 
     @staticmethod
     def testFindImgfromImg():
         from image import imagecompare
         lSrc = u"game2.png"
-        lTarget  = u"test/icon.png"
+        lTarget  = u"img/icon.png"
         print imagecompare.FindImgFromImg(lSrc, lTarget)
 
     @staticmethod
