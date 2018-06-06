@@ -92,6 +92,7 @@ def isImageDiffMuch(tImgFirst, tImgSecond):
     # showImg(lFirst)
     # showImg(lSecond)
 
+    # 图片顺序显示竟然会报错, 这个bug 需要修复
     frameDelta = cv2.absdiff(lFirst, lSecond)
     thresh = cv2.threshold(frameDelta, lGrabValue, 255, cv2.THRESH_BINARY)[1]
     # 扩展阀值图像填充孔洞，然后找到阀值图像上的轮廓
@@ -136,6 +137,7 @@ def adjustImg(lFirst, lSecond):
         lSecond = imutils.resize(lSecond, width=lWidth, height=lHeight)
 
     else:
+        # 图片旋转无法自适应, 图片旋转顺序出现较大问题, 需要续费
         # lSecond = imutils.rotate(lSecond, angle= -90)
         lSecond= numpy.rot90(lSecond)
         lSecond = imutils.resize(lSecond, width=lWidth, height=lHeight)
