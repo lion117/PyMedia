@@ -139,8 +139,8 @@ def adjustImg(lFirst, lSecond):
     else:
         # 图片旋转无法自适应, 图片旋转顺序出现较大问题, 需要续费
         # lSecond = imutils.rotate(lSecond, angle= -90)
-        lSecond= numpy.rot90(lSecond)
-        lSecond = imutils.resize(lSecond, width=lWidth, height=lHeight)
+        # lSecond= numpy.rot90(lSecond)
+        # lSecond = imutils.resize(lSecond, width=lWidth, height=lHeight)
 
     return  lSecond
 
