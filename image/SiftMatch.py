@@ -216,7 +216,7 @@ class MainTest():
 
     @staticmethod
     def testFindMatchImg():
-        lSrc = u"img/book.jpg"
+        lSrc = u"feature3.png"
         lTarget = u"game.png"
         findMatchImg(lSrc, lTarget)
 
