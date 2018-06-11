@@ -2,6 +2,7 @@
 
 import sys, os, time
 import  AndroidOpt
+import image.ImageDealing
 import image.ImageMatch
 from  image.SiftMatch import isFindTargetImage, findMatchImgXY
 
@@ -19,22 +20,18 @@ class Main():
                 print(u"screen shoot error")
                 break
 
-            # if  Main.isStucked(lScreenShoot) is False:
-            #     time.sleep(2)
-            #     continue
 
+            Main.rotate(lScreenShoot)
             (lRet, lx, ly)  = findMatchImgXY(lTartget,lScreenShoot)
-            print lRet, lx, ly
-            # (lRet , lValue)= image.ImageMatch.isImageDiffMuch(lScreenShoot, lTemplate)
-            # if lRet is True:
-            #     time.sleep(2)
-            #     print (u"current times %d  skip diff value %d    "%( lIndex,lValue))
-            #     continue
-            # else:
-            #     AndroidOpt.clickScreen()
-            #     time.sleep(2)
-            # lIndex +=1
-            # print (u" %d Times"%(lIndex))
+            if lRet is False:
+                time.sleep(2)
+                print (u"current times %d  skip diff "%( lIndex))
+                continue
+            else:
+                AndroidOpt.tapScreen(lx, ly)
+                time.sleep(2)
+            lIndex +=1
+            print (u" %d Times"%(lIndex))
 
         print (u"done %d"%(lIndex))
 
@@ -50,7 +47,10 @@ class Main():
             return False
         return  True
 
-
+    @staticmethod
+    def rotate(tBigImg):
+        lImge =  image.ImageDealing.imageRotateByPil(tBigImg)
+        image.save(lImge)
 
 
 class MainTest():
