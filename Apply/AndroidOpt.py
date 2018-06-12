@@ -9,17 +9,17 @@ def tapScreen(x, y):
     # base_x, base_y = 1920, 1080
     # real_x = int(x / base_x * device_x)
     # real_y = int(y / base_y * device_y)
-    subprocess.call( 'D:\\program_test\\yeshen\\Nox\\bin\\nox_adb.exe shell  input tap %d %d '%(x,y))
+    subprocess.call( 'D:\\Program Files\\Nox\\bin\\adb.exe shell  input tap %d %d '%(x,y))
 
 
 def clickScreen():
-    lExe = "D:\\program_test\\yeshen\\Nox\\bin\\nox_adb.exe"
+    lExe = "D:\\Program Files\\Nox\\bin\\adb.exe"
     lCmd = str.format('%s shell  input tap %d %d '%(lExe, 300,400 ))
     subprocess.call(lCmd)
 
 
 def screenShoot():
-    lExe = "D:\\program_test\\yeshen\\Nox\\bin\\nox_adb.exe"
+    lExe = "D:\\Program Files\\Nox\\bin\\adb.exe"
     lShoot = str.format("%s  pull /sdcard/screenshot.png %s "%(lExe, os.getcwd()))
     lCmd1 = str.format("%s shell /system/bin/screencap -p /sdcard/screenshot.png "%(lExe))
     subprocess.call(lCmd1)
