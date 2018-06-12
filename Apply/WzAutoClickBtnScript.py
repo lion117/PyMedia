@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import sys, os, time
+
+import PIL.Image
+
 import  AndroidOpt
 import image.ImageDealing
 import image.ImageMatch
@@ -50,7 +53,7 @@ class Main():
     @staticmethod
     def rotate(tBigImg):
         lImge =  image.ImageDealing.imageRotateByPil(tBigImg)
-        image.save(lImge)
+        lImge.save(tBigImg)
 
 
 class MainTest():

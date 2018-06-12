@@ -33,10 +33,11 @@ class MainTest():
 
     @staticmethod
     def testClick():
-        clickScreen()
+        tapScreen(733,451)
 
 
 
 if __name__ == "__main__":
     print os.getcwd()
-    MainTest.testScreenShoot()
+    # MainTest.testScreenShoot()
+    MainTest.testClick()
