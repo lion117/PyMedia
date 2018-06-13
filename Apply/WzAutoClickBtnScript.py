@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import sys, os, time
+lParentDir = os.path.dirname(os.getcwd())
+sys.path.insert(0,lParentDir)
 
 import PIL.Image
 
@@ -8,7 +10,6 @@ import  AndroidOpt
 import image.ImageDealing
 import image.ImageMatch
 from  image.SiftMatch import isFindTargetImage, findMatchImgXY
-
 
 class Main():
     @staticmethod
