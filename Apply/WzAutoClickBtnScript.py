@@ -30,14 +30,14 @@ class Main():
             (lRet, lx, ly)  = findMatchImgXY(lTartget,lScreenShoot)
             if lRet is False:
                 (lRet1, lx1, ly1)  = findMatchImgXY(lJumpImg,lScreenShoot)
-                if lRet is False:
+                if lRet1 is False:
                     time.sleep(2)
                     print (u"current times %d  not found target image "%( lIndex))
                     continue
                 else:
                     AndroidOpt.tapScreen(lx1, ly1)
-                    time.sleep(2)
                     print (u"current times %d  skip button "%( lIndex))
+                    time.sleep(10)
             else:
                 AndroidOpt.tapScreen(lx, ly)
                 time.sleep(2)
