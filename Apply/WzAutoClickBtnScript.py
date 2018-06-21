@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import sys, os, time
+sys.path.insert(0,os.path.dirname(os.getcwd()))
 
 import PIL.Image
 
