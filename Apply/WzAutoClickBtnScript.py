@@ -15,6 +15,7 @@ class Main():
     @staticmethod
     def run():
         lTartget = u"feature0.png"
+        lJumpImg = u"skip.png"
         lScreenShoot = u"screenshot.png"
         lIndex = 0
         print (u"begin")
@@ -28,9 +29,15 @@ class Main():
             Main.rotate(lScreenShoot)
             (lRet, lx, ly)  = findMatchImgXY(lTartget,lScreenShoot)
             if lRet is False:
-                time.sleep(2)
-                print (u"current times %d  skip diff "%( lIndex))
-                continue
+                (lRet1, lx1, ly1)  = findMatchImgXY(lJumpImg,lScreenShoot)
+                if lRet is False:
+                    time.sleep(2)
+                    print (u"current times %d  not found target image "%( lIndex))
+                    continue
+                else:
+                    AndroidOpt.tapScreen(lx1, ly1)
+                    time.sleep(2)
+                    print (u"current times %d  skip button "%( lIndex))
             else:
                 AndroidOpt.tapScreen(lx, ly)
                 time.sleep(2)
