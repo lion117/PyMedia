@@ -38,11 +38,12 @@ class Main():
                     AndroidOpt.tapScreen(lx1, ly1)
                     print (u"current times %d  skip button "%( lIndex))
                     time.sleep(10)
+                    continue
             else:
                 AndroidOpt.tapScreen(lx, ly)
                 time.sleep(2)
-            lIndex +=1
-            print (u" %d Times"%(lIndex))
+                lIndex +=1
+                print (u" %d Times"%(lIndex))
 
         print (u"done %d"%(lIndex))
 

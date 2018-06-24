@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f363793-64fd-43ee-868d-ca3e2006ec4f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/screenshot.png" afterPath="$PROJECT_DIR$/image/screenshot.png" />
+    <list default="true" id="1f363793-64fd-43ee-868d-ca3e2006ec4f" name="Default" comment="finish image rotate and script for wz">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PyBasic/hongkong.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Apply/screenshot.png" afterPath="$PROJECT_DIR$/Apply/screenshot.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Apply/AndroidOpt.py" afterPath="$PROJECT_DIR$/Apply/AndroidOpt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" afterPath="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/ImageDealing.py" afterPath="$PROJECT_DIR$/image/ImageDealing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/ImageMatch.py" afterPath="$PROJECT_DIR$/image/ImageMatch.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/AssisstClick.py" afterPath="$PROJECT_DIR$/PyBasic/ImgHistogram.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/PyBasic/__init__.py" />
     </list>
     <ignored path="PyMedia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,13 +30,14 @@
     <SUITE FILE_PATH="coverage/PyMedia_d$PyAudioPlayDemo.coverage" NAME="PyAudioPlayDemo Coverage Results" MODIFIED="1526291417468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audio" />
     <SUITE FILE_PATH="coverage/PyMedia_d$AudioVisualizeDemo.coverage" NAME="AudioVisualizeDemo Coverage Results" MODIFIED="1527840258745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audio" />
     <SUITE FILE_PATH="coverage/PyMedia_d$Nosetests_in_PyAudioPlayDemo.coverage" NAME="Nosetests in PyAudioPlayDemo Coverage Results" MODIFIED="1526290329084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/audio" />
-    <SUITE FILE_PATH="coverage/PyMedia_d$AndroidOpt.coverage" NAME="AndroidOpt Coverage Results" MODIFIED="1528009995566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Apply" />
-    <SUITE FILE_PATH="coverage/PyMedia_d$WzAutoClickBtnScript.coverage" NAME="WzAutoClickBtnScript Coverage Results" MODIFIED="1528528528037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Apply" />
+    <SUITE FILE_PATH="coverage/PyMedia_d$ImgHistogram.coverage" NAME="ImgHistogram Coverage Results" MODIFIED="1529826276157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PyBasic" />
+    <SUITE FILE_PATH="coverage/PyMedia_d$AndroidOpt.coverage" NAME="AndroidOpt Coverage Results" MODIFIED="1528800697741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Apply" />
+    <SUITE FILE_PATH="coverage/PyMedia_d$WzAutoClickBtnScript.coverage" NAME="WzAutoClickBtnScript Coverage Results" MODIFIED="1529569030716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Apply" />
     <SUITE FILE_PATH="coverage/PyMedia_d$OpenCamera.coverage" NAME="OpenCamera Coverage Results" MODIFIED="1526712350980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/video" />
     <SUITE FILE_PATH="coverage/PyMedia_d$ImageDealing.coverage" NAME="ImageDealing Coverage Results" MODIFIED="1528710814914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/image" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="E:\git_demo\Python\PyMedia_d" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -45,106 +48,77 @@
       <file leaf-file-name="ImageDealing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image/ImageDealing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
+            <state relative-caret-position="819">
               <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function_base.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/numpy/lib/function_base.py">
+      <file leaf-file-name="ImageCompose.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/ImageCompose.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
-              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-              <folding>
-                <element signature="e#69556#70259#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiftMatch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image/SiftMatch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-              <folding>
-                <element signature="e#151#1387#0" expanded="false" />
-                <element signature="e#3913#6757#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/PIL/Image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="1856" column="0" selection-start-line="1856" selection-start-column="0" selection-end-line="1856" selection-end-column="0" />
-              <folding>
-                <element signature="e#57518#58858#1" expanded="true" />
-                <element signature="e#62076#63495#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-762174762/cv2/cv2/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-122">
-              <caret line="6624" column="4" selection-start-line="6624" selection-start-column="4" selection-end-line="6624" selection-end-column="4" />
-              <folding>
-                <element signature="e#295895#296968#1" expanded="true" />
-                <element signature="e#399813#401244#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WzAutoClickBtnScript.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <state relative-caret-position="819">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidOpt.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Apply/AndroidOpt.py">
+      <file leaf-file-name="game4.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/game4.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game3.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/game3.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sound.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/audio/sound.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test1.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video/test1.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImgHistogram.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PyBasic/ImgHistogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="394">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageMatch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image/ImageMatch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
-              <folding />
-            </state>
+      <file leaf-file-name="test2.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video/test2.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="convenience.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/imutils/convenience.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-              <folding />
-            </state>
+      <file leaf-file-name="game.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/game.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="screenshot.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/image/screenshot.png">
+      <file leaf-file-name="found.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/found.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -161,6 +135,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -173,14 +153,18 @@
         <option value="$PROJECT_DIR$/app/AssisstClick.py" />
         <option value="$PROJECT_DIR$/image/imagecompare.py" />
         <option value="$PROJECT_DIR$/audio/AudioToPcm.py" />
-        <option value="$PROJECT_DIR$/Apply/AndroidOpt.py" />
         <option value="$PROJECT_DIR$/Apply/Make" />
         <option value="$PROJECT_DIR$/Apply/WzAutoClickScript.py" />
         <option value="$PROJECT_DIR$/audio/AudioVisualizeDemo.py" />
         <option value="$PROJECT_DIR$/image/SiftMatch.py" />
         <option value="$PROJECT_DIR$/image/ImageMatch.py" />
+        <option value="$PROJECT_DIR$/image/PILImageApiTest.py" />
+        <option value="$PROJECT_DIR$/image/Test/PILImageApiTest.py" />
         <option value="$PROJECT_DIR$/image/ImageDealing.py" />
+        <option value="$PROJECT_DIR$/Apply/Make.bat" />
         <option value="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" />
+        <option value="$PROJECT_DIR$/Apply/AndroidOpt.py" />
+        <option value="$PROJECT_DIR$/PyBasic/ImgHistogram.py" />
       </list>
     </option>
   </component>
@@ -215,6 +199,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -232,11 +218,37 @@
               <option name="myItemId" value="PyMedia_d" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="video" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyMedia_d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyMedia_d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyMedia_d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyMedia_d" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyBasic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,19 +263,21 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git_demo\Python\PyMedia_d\image\Test" />
       <recent name="E:\git_demo\Python\PyMedia_d\image" />
       <recent name="E:\git_demo\Python\PyMedia_d\image\test" />
       <recent name="E:\git_demo\Python\PyMedia_d\AssisstClick" />
       <recent name="E:\git_demo\Python\PyMedia" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_demo\Python\PyMedia_d\PyBasic" />
       <recent name="E:\git_demo\Python\PyMedia_d\image" />
       <recent name="E:\git_demo\Python\PyMedia_d\Apply" />
       <recent name="E:\git_demo\Python\PyMedia_d\image\img" />
       <recent name="E:\git_demo\Python\PyMedia_d\audio" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ImageDealing">
+  <component name="RunManager" selected="Python.ImgHistogram">
     <configuration default="false" name="AndroidOpt" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -278,24 +292,6 @@
       <module name="PyMedia" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Apply/AndroidOpt.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="WzAutoClickScript" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Apply" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="PyMedia" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Apply/WzAutoClickScript.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -350,6 +346,24 @@
       <module name="PyMedia" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image/ImageDealing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ImgHistogram" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyBasic" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PyMedia" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyBasic/ImgHistogram.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -545,18 +559,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.AndroidOpt" />
-      <item index="1" class="java.lang.String" itemvalue="Python.WzAutoClickScript" />
-      <item index="2" class="java.lang.String" itemvalue="Python.SiftMatch" />
-      <item index="3" class="java.lang.String" itemvalue="Python.WzAutoClickBtnScript" />
-      <item index="4" class="java.lang.String" itemvalue="Python.ImageDealing" />
+      <item index="1" class="java.lang.String" itemvalue="Python.SiftMatch" />
+      <item index="2" class="java.lang.String" itemvalue="Python.WzAutoClickBtnScript" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ImageDealing" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ImgHistogram" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ImageDealing" />
-        <item index="1" class="java.lang.String" itemvalue="Python.SiftMatch" />
-        <item index="2" class="java.lang.String" itemvalue="Python.WzAutoClickBtnScript" />
-        <item index="3" class="java.lang.String" itemvalue="Python.WzAutoClickScript" />
-        <item index="4" class="java.lang.String" itemvalue="Python.AndroidOpt" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ImgHistogram" />
+        <item index="1" class="java.lang.String" itemvalue="Python.WzAutoClickBtnScript" />
+        <item index="2" class="java.lang.String" itemvalue="Python.AndroidOpt" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ImageDealing" />
+        <item index="4" class="java.lang.String" itemvalue="Python.SiftMatch" />
       </list>
     </recent_temporary>
   </component>
@@ -638,7 +652,49 @@
       <option name="project" value="LOCAL" />
       <updated>1528539289941</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finish image rotate and script for wz">
+      <created>1528711407504</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1528711407504</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix the bug">
+      <created>1528801062448</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1528801062448</updated>
+    </task>
+    <task id="LOCAL-00012" summary="finish">
+      <created>1528860186639</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1528860186639</updated>
+    </task>
+    <task id="LOCAL-00013" summary="solve python run alone error issue">
+      <created>1528885369253</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1528885369253</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add auto click skip button">
+      <created>1529568786745</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1529568786745</updated>
+    </task>
+    <task id="LOCAL-00015" summary="finish image rotate and script for wz">
+      <created>1529569018067</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1529569018067</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -653,24 +709,24 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20895523" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2217484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32516703" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32293987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3964365" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39464882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -694,7 +750,12 @@
     <MESSAGE value="add sift class" />
     <MESSAGE value="finish the function to locate the feature" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="fix the bug" />
+    <MESSAGE value="finish" />
+    <MESSAGE value="solve python run alone error issue" />
+    <MESSAGE value="add auto click skip button" />
+    <MESSAGE value="finish image rotate and script for wz" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish image rotate and script for wz" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -739,6 +800,36 @@
           <line>24</line>
           <option name="timeStamp" value="53" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/image/ImageDealing.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/image/ImageDealing.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/image/ImageDealing.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -747,46 +838,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="54" />
+      <option name="time" value="65" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/audio/PyAudioPlayDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/audio/AudioVisualizeDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/matplotlib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/pylab.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/audio/PyAudioPlayDemo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/matplotlib/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -853,24 +909,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/audio/AudioToPcm.py" />
-    <entry file="file://$PROJECT_DIR$/app/AssisstClick.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Apply/Make" />
-    <entry file="file://$PROJECT_DIR$/video/test2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video/test1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/audio/AudioVisualizeDemo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1250">
@@ -898,13 +937,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickScript.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/img/continue.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -925,16 +957,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/screenshot.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/feature0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/game_target.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -944,44 +966,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10175">
           <caret line="2628" column="0" selection-start-line="2628" selection-start-column="0" selection-end-line="2628" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/ImageCompose.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="44" column="27" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/matched.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/found.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/game2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/game.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -990,25 +978,128 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1581">
           <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-762174762/cv2/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-122">
+        <state relative-caret-position="72225">
           <caret line="6624" column="4" selection-start-line="6624" selection-start-column="4" selection-end-line="6624" selection-end-column="4" />
-          <folding>
-            <element signature="e#295895#296968#1" expanded="true" />
-            <element signature="e#399813#401244#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/site-packages/imutils/convenience.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="600">
           <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/SiftMatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+          <folding>
+            <element signature="e#151#1387#0" expanded="false" />
+            <element signature="e#3913#6757#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/Test/PILImageApiTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35500">
+          <caret line="1855" column="8" selection-start-line="1855" selection-start-column="8" selection-end-line="1855" selection-end-column="8" />
+          <folding>
+            <element signature="e#18579#19096#1" expanded="true" />
+            <element signature="e#19986#20293#1" expanded="true" />
+            <element signature="e#20769#21006#1" expanded="true" />
+            <element signature="e#21743#22173#1" expanded="true" />
+            <element signature="e#23158#23535#1" expanded="true" />
+            <element signature="e#23659#25398#1" expanded="true" />
+            <element signature="e#30701#31170#1" expanded="true" />
+            <element signature="e#32185#32429#1" expanded="true" />
+            <element signature="e#32551#32967#1" expanded="true" />
+            <element signature="e#33753#34465#1" expanded="true" />
+            <element signature="e#35618#35852#1" expanded="true" />
+            <element signature="e#35935#36237#1" expanded="true" />
+            <element signature="e#36341#36634#1" expanded="true" />
+            <element signature="e#57518#58858#1" expanded="true" />
+            <element signature="e#62076#63495#1" expanded="true" />
+            <element signature="e#81282#81720#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apply/Make.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apply/feature0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apply/screenshot.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apply/AndroidOpt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AssisstClick.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1018,66 +1109,74 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/numpy/lib/function_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <element signature="e#69556#70259#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/image/SiftMatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
-          <folding>
-            <element signature="e#151#1387#0" expanded="false" />
-            <element signature="e#3913#6757#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/PIL/Image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="1856" column="0" selection-start-line="1856" selection-start-column="0" selection-end-line="1856" selection-end-column="0" />
-          <folding>
-            <element signature="e#57518#58858#1" expanded="true" />
-            <element signature="e#62076#63495#1" expanded="true" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/image/matched.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/ImageMatch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="819">
           <caret line="140" column="29" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/AndroidOpt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/ImageDealing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
+        <state relative-caret-position="819">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py">
+    <entry file="file://$PROJECT_DIR$/image/ImageCompose.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state relative-caret-position="819">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/game4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/game.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/found.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image/game3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/audio/sound.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/test2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/test1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyBasic/ImgHistogram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
           <folding />
         </state>
       </provider>

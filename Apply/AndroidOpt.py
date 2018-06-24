@@ -35,7 +35,7 @@ class MainTest():
     def testClick():
         tapScreen(733,451)
 
-
+#com.tencent.tmgp.sgame
 
 if __name__ == "__main__":
     print os.getcwd()
