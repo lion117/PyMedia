@@ -2,6 +2,7 @@
 
 import sys, os, time
 import subprocess
+import  re
 
 g_exeDevice = 'D:\\program_test\\yeshen\\Nox\\bin\\nox_adb.exe'
 
@@ -10,7 +11,7 @@ def tapScreen(x, y, tDevice=None):
     if tDevice is None:
         lCmd = str.format('%s  shell   input tap %d %d ' % (g_exeDevice, x, y))
     else:
-        lCmd = str.format('%s  shell -s %s  input tap %d %d ' % (g_exeDevice, tDevice, x, y))
+        lCmd = str.format('%s -s %s shell   input tap %d %d ' % (g_exeDevice, tDevice, x, y))
     subprocess.call(lCmd)
 
 
@@ -20,12 +21,12 @@ def clickScreen():
 
 
 def screenShoot( tDevice=None):
-    if None is None:
+    if tDevice is None:
         lShoot = str.format("%s  pull /sdcard/screenshot.png %s "%(g_exeDevice, os.getcwd()))
         lCmd1 = str.format("%s shell /system/bin/screencap -p /sdcard/screenshot.png "%(g_exeDevice))
     else:
-        lShoot = str.format("%s -s %s  pull /sdcard/screenshot.png %s "%(g_exeDevice,tDevice ,os.getcwd()))
-        lCmd1 = str.format("%s shell  -s %s /system/bin/screencap -p /sdcard/screenshot.png "%(g_exeDevice,tDevice))
+        lShoot = str.format("%s  -s %s pull  /sdcard/screenshot.png %s "%(g_exeDevice,tDevice ,os.getcwd()))
+        lCmd1 = str.format("%s -s %s shell   /system/bin/screencap -p /sdcard/screenshot.png "%(g_exeDevice,tDevice))
     subprocess.call(lCmd1)
     subprocess.call(lShoot)
 
@@ -39,9 +40,15 @@ def fetchEmulatorDevice():
 def parseDevices(tInfo):
     if len(tInfo) == 0 :
         return  []
-    import  re
+
     lRet = re.findall(r"127.0.0.1:\d+",tInfo)
     return  lRet
+
+def killWz(tDevice=None):
+    if tDevice is None:
+        lCmd = str.format('%s devices'%(g_exeDevice))
+    else:
+        lCmd = str.format('%s devices'%(g_exeDevice))
 
 class MainTest():
     @staticmethod
@@ -54,8 +61,11 @@ class MainTest():
 
     @staticmethod
     def testAdbDevice():
-        lInfo = "'List of devices attached\r\n127.0.0.1:62001\tdevice\r\n"
-        parseDevices(lInfo)
+        lList =  fetchEmulatorDevice()
+        if len(lList) > 0:
+            tapScreen(0,0,lList[0])
+            screenShoot(lList[0])
+
 
 #com.tencent.tmgp.sgame
 

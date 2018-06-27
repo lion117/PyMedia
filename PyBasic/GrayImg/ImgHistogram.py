@@ -27,13 +27,17 @@ import numpy as np
 
 
 def ConvertHist(tImage):
+
     if os.path.exists(tImage) is False:
         print(u"%s not found"%tImage)
         return
-    img = np.array(Image.open(tImage).convert('L'))
+    lImge = Image.open(tImage).convert('L')
+    if __debug__:
+        lImge.show()
+    img = np.array(lImge)
     plt.figure('cat')
     arr = img.flatten()
-    n, bins, patches = plt.hist(arr, bins=256, normed=1, facecolor='green', alpha=0.75)
+    n, bins, patches = plt.hist(arr, bins=256, density=1, facecolor='green', alpha=0.75)
     plt.show()
 
 
