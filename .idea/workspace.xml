@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f363793-64fd-43ee-868d-ca3e2006ec4f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PyBasic/GrayImg/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Apply/screenshot.png" afterPath="$PROJECT_DIR$/Apply/screenshot.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Apply/AndroidOpt.py" afterPath="$PROJECT_DIR$/Apply/AndroidOpt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" afterPath="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PyBasic/ImgHistogram.py" afterPath="$PROJECT_DIR$/PyBasic/GrayImg/ImgHistogram.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PyBasic/hongkong.jpg" afterPath="$PROJECT_DIR$/PyBasic/GrayImg/hongkong.jpg" />
     </list>
     <ignored path="PyMedia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WzAutoClickBtnScript.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WzAutoClickBtnScript.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="775">
+              <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -112,11 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidOpt.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidOpt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Apply/AndroidOpt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+            <state relative-caret-position="568">
+              <caret line="52" column="78" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -178,8 +175,8 @@
         <option value="$PROJECT_DIR$/image/ImageDealing.py" />
         <option value="$PROJECT_DIR$/Apply/Make.bat" />
         <option value="$PROJECT_DIR$/PyBasic/ImgHistogram.py" />
-        <option value="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" />
         <option value="$PROJECT_DIR$/Apply/AndroidOpt.py" />
+        <option value="$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py" />
       </list>
     </option>
   </component>
@@ -748,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530091175207</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="add the device name print info">
+      <created>1530101076854</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1530101076854</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -763,8 +767,9 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22121535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22121535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -775,7 +780,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39309576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -812,7 +816,9 @@
     <MESSAGE value="finish basic option of histogram" />
     <MESSAGE value="fetch the device name" />
     <MESSAGE value="support multidevice click scrip" />
-    <option name="LAST_COMMIT_MESSAGE" value="support multidevice click scrip" />
+    <MESSAGE value="add the device name print info" />
+    <MESSAGE value="add kill process option" />
+    <option name="LAST_COMMIT_MESSAGE" value="add kill process option" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1187,18 +1193,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py">
+    <entry file="file://$PROJECT_DIR$/Apply/AndroidOpt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="568">
+          <caret line="52" column="78" selection-start-line="52" selection-start-column="78" selection-end-line="52" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apply/AndroidOpt.py">
+    <entry file="file://$PROJECT_DIR$/Apply/WzAutoClickBtnScript.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+        <state relative-caret-position="775">
+          <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
           <folding />
         </state>
       </provider>

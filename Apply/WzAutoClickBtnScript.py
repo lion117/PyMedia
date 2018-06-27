@@ -63,6 +63,14 @@ class Main():
             return lDvList[lIndex]
 
     @staticmethod
+    def isTimeToKill(tIndex):
+        lDvList = AndroidOpt.fetchEmulatorDevice()
+        lSize = len(lDvList)
+        if tIndex > 88*(lSize):
+            for itor in lDvList:
+                AndroidOpt.killWz(itor)
+
+    @staticmethod
     def rotate(tBigImg):
         lImge =  image.ImageDealing.imageRotateByPil(tBigImg)
         lImge.save(tBigImg)
