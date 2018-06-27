@@ -11,20 +11,25 @@ import image.ImageDealing
 import image.ImageMatch
 from  image.SiftMatch import isFindTargetImage, findMatchImgXY
 
+g_ticks =0
+
 class Main():
+
     @staticmethod
     def run():
+        global  g_ticks
         lTartget = u"feature0.png"
         lJumpImg = u"skip.png"
         lScreenShoot = u"screenshot.png"
         lIndex = 0
         print (u"begin")
         while True:
-            AndroidOpt.screenShoot()
+            g_ticks +=1
+            lDevice = Main.getAndroidDevice()
+            AndroidOpt.screenShoot(tDevice=lDevice)
             if os.path.exists(lScreenShoot) is False:
                 print(u"screen shoot error")
                 break
-
 
             Main.rotate(lScreenShoot)
             (lRet, lx, ly)  = findMatchImgXY(lTartget,lScreenShoot)
@@ -35,12 +40,12 @@ class Main():
                     print (u"current times %d  not found target image "%( lIndex))
                     continue
                 else:
-                    AndroidOpt.tapScreen(lx1, ly1)
+                    AndroidOpt.tapScreen(lx1, ly1,tDevice=lDevice)
                     print (u"current times %d  skip button "%( lIndex))
                     time.sleep(10)
                     continue
             else:
-                AndroidOpt.tapScreen(lx, ly)
+                AndroidOpt.tapScreen(lx, ly,tDevice=lDevice)
                 time.sleep(2)
                 lIndex +=1
                 print (u" %d Times"%(lIndex))
@@ -48,16 +53,14 @@ class Main():
         print (u"done %d"%(lIndex))
 
     @staticmethod
-    def isStucked(tBigImg):
-        lFeature0 = u"feature0.png"
-        lFeature1 = u"feature1.png"
-        if isFindTargetImage(lFeature0, tBigImg) is False:
-            print (u"did not found the feature0 ")
-            return False
-        if isFindTargetImage(lFeature1 , tBigImg) is False:
-            print (u"did not found the feature1 ")
-            return False
-        return  True
+    def getAndroidDevice():
+        lDvList = AndroidOpt.fetchEmulatorDevice()
+        lSize = len(lDvList)
+        if lSize <2:
+            return None
+        else:
+            lIndex = g_ticks % lSize
+            return lDvList[lIndex]
 
     @staticmethod
     def rotate(tBigImg):
