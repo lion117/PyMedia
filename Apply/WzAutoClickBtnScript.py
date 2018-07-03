@@ -25,6 +25,7 @@ class Main():
         print (u"begin")
         while True:
             g_ticks +=1
+            Main.isTimeToKill(g_ticks)
             lDevice = Main.getAndroidDevice()
             AndroidOpt.screenShoot(tDevice=lDevice)
             if os.path.exists(lScreenShoot) is False:
@@ -66,7 +67,7 @@ class Main():
     def isTimeToKill(tIndex):
         lDvList = AndroidOpt.fetchEmulatorDevice()
         lSize = len(lDvList)
-        if tIndex > 88*(lSize):
+        if tIndex > 90*(lSize):
             for itor in lDvList:
                 AndroidOpt.killWz(itor)
 
