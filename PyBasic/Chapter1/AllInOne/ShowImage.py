@@ -33,6 +33,7 @@ def matplotlib_multi_pic2():
     lGray1 = cv2.cvtColor(lImage1,cv2.COLOR_RGB2BGR)
     lGray2 = cv2.cvtColor(lImage2,cv2.COLOR_RGB2BGR)
     lGray3 = cv2.cvtColor(lImage3,cv2.COLOR_RGB2BGR)
+    lGray4 = cv2.cvtColor(lImage1,cv2.COLOR_RGB2GRAY)
 
     # 如果总图片个数不超过10，我们还可以用快速的方法
     plt.subplot(321), plt.imshow(lImage1), plt.title("1")
@@ -43,6 +44,7 @@ def matplotlib_multi_pic2():
 
     plt.subplot(325), plt.imshow(lImage3), plt.title("3")
     plt.subplot(326), plt.imshow(lGray3), plt.title("3'")
+    cv2.imshow("cv",lGray4)
     plt.show()
 
 
