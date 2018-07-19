@@ -48,9 +48,10 @@ def killWz(tDevice=None):
     lPkg = "com.tencent.tmgp.sgame"
     lPkgSrv = "com.tencent.tmgp.sgame:xg_service_v3"
     if tDevice is None:
-        lCmd = str.format('%s shell am force-stop'%(g_exeDevice))
+        lCmd = str.format('%s shell am force-stop %s'%(g_exeDevice,lPkg))
     else:
-        lCmd = str.format('%s -s %s shell am force-stop'%(g_exeDevice, tDevice))
+        lCmd = str.format('%s -s %s shell am force-stop %s'%(g_exeDevice, tDevice,lPkg))
+    subprocess.call(lCmd)
 
 class MainTest():
     @staticmethod
@@ -76,4 +77,5 @@ if __name__ == "__main__":
     # MainTest.testScreenShoot()
     # MainTest.testClick()
     # fetchEmulatorDevice()
-    MainTest.testAdbDevice()
+    # MainTest.testAdbDevice()
+    killWz(None)
