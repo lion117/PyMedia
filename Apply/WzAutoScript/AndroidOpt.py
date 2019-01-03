@@ -53,7 +53,14 @@ def killWz(tDevice=None):
         lCmd = str.format('%s -s %s shell am force-stop %s'%(g_exeDevice, tDevice,lPkg))
     subprocess.call(lCmd)
 
-class MainTest():
+def closeAndroid(tDevice):
+    if tDevice is None:
+        lCmd = str.format('%s shell reboot -p' % (g_exeDevice))
+    else:
+        lCmd = str.format('%s -s %s shell  reboot -p' % (g_exeDevice, tDevice))
+    subprocess.call(lCmd)
+
+class MainRun():
     @staticmethod
     def testScreenShoot():
         screenShoot()
@@ -68,7 +75,9 @@ class MainTest():
         if len(lList) > 0:
             tapScreen(0,0,lList[0])
             screenShoot(lList[0])
-
+    @staticmethod
+    def runCloseAndroid():
+        closeAndroid(None)
 
 #com.tencent.tmgp.sgame
 
@@ -79,3 +88,4 @@ if __name__ == "__main__":
     # fetchEmulatorDevice()
     # MainTest.testAdbDevice()
     killWz(None)
+    MainRun.runCloseAndroid()

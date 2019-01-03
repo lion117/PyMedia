@@ -88,4 +88,6 @@ class MainTest():
 
 if __name__ == "__main__":
     print os.getcwd()
-    MainTest.testMutilScreen()
+    # MainTest.testMutilScreen()
+    # MainTest.testOpenMultiCamera()
+    OpenMultiCameras()

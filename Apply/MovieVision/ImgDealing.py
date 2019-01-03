@@ -53,11 +53,12 @@ class MainRun():
 class FilmScope():
     _curDir = os.getcwd()
     _tarDir = os.path.dirname(os.path.dirname(_curDir))
-    _video8k = os.path.join(_tarDir, u"ShareMedia/video/Japanin8K.webm")
+    # _video8k = os.path.join(_tarDir, u"ShareMedia/video/Japanin8K.webm")
+    _video8k = os.path.join(_tarDir, u"ShareMedia/video/DellPeople8K.webm")
     _effectQueue = Queue.Queue()
     _font = cv2.FONT_HERSHEY_SIMPLEX
-    _width = 1280
-    _height = 720
+    _width = 960
+    _height = 540
     _effectType = -1
     _videoCounts  = 0
     _videoIndex  = -1
@@ -71,9 +72,9 @@ class FilmScope():
             if lRet is False:
                 break
             lScope = cls.addFilmEffect(lFrame)
-
-            cv2.imshow('8k', lScope)
-            if cv2.waitKey(33) > -1:
+            cv2.imshow('720p',lScope)
+            cv2.imshow('8k', cv2.resize(lFrame,(cls._width,cls._height)))
+            if cv2.waitKey(5) > -1:
                 break
             print("video frame index %d"%(lIndex))
             lIndex +=1
@@ -88,15 +89,24 @@ class FilmScope():
 
     @classmethod
     def addFilmEffect(cls, tSrcFrame):
-        if cls._effectQueue.empty():
+        if cls._effectQueue.empty() and cls._effectType == -1:
             lDestFrame = cls.videoEffect(tSrcFrame,0,0)
             return  lDestFrame
-        lItem = cls._effectQueue.get()
-        lEffType = lItem[0]
-        lFrameCounts = lItem[1]*24
-        for  i in range(lFrameCounts):
-            lDestFrame = cls.videoEffect(tSrcFrame , lEffType,lFrameCounts,i)
-            return  lDestFrame
+        if cls._effectType  ==  -1:
+            lItem = cls._effectQueue.get()
+            cls._effectType = lItem[0]
+            cls._videoCounts = lItem[1]*24
+            cls._videoIndex = 0
+
+        lDestFrame = cls.videoEffect(tSrcFrame , cls._effectType ,cls._videoCounts,cls._videoIndex)
+
+        cls._videoIndex +=1
+        if cls._videoIndex >= cls._videoCounts:
+            cls._effectType = -1
+            cls._videoCounts = 0
+            cls._videoIndex = -1
+
+        return  lDestFrame
 
 
 
@@ -112,9 +122,45 @@ class FilmScope():
             lCentX , lCentY = (lSrcWidth /2 , lSrcHeight/2)
             lLeftX , lLeftY = (lCentX  - cls._width/2 , lCentY - cls._height/2)
             lRightX , lRightY = (lCentX  + cls._width/2 , lCentY + cls._height/2)
-            lScope = tSrcFrame[lLeftX: lRightX , lLeftY : lRightY]
-            lScope = cv2.putText(lScope, "type: 1 cut image",(10,10), cls._font, 20, (255,0,0))
+            lScope = tSrcFrame[ lLeftY : lRightY,lLeftX: lRightX ]
+            lScope = cv2.putText(lScope, "type: 1 cut image",(50,50), cls._font, 1, (0,255,0))
             return  lScope
+
+        if tType == 2:
+            if tCount == 0 or tCount < tIndex:
+                print("invalid para")
+                return  tSrcFrame
+            lSrcHeight , lSrcWidth , lRet  = tSrcFrame.shape
+            lCentX , lCentY = (lSrcWidth /2 , lSrcHeight/2)
+            lLeftX , lLeftY = (lCentX  - cls._width/2 , lCentY - cls._height/2)
+            lRightX , lRightY = (lCentX  + cls._width/2 , lCentY + cls._height/2)
+            lUnitX , lUnitY = (lLeftX / tCount , lLeftY / tCount)
+            lIncrX , lIncrY = lUnitX * (tCount - tIndex) , lUnitY * (tCount - tIndex)
+            lRealLeftX  , lRealLeftY = lLeftX - lIncrX , lLeftY - lIncrY
+            lRealRightX , lRealRightY = lRightX + lIncrX , lRightY + lIncrY
+
+            lScope = tSrcFrame[ lRealLeftY : lRealRightY,lRealLeftX: lRealRightX ]
+            lScope  = cv2.resize(lScope, (cls._width, cls._height))
+            lScope = cv2.putText(lScope, "type: 2 scope MIN image",(50,50), cls._font, 1, (0,255,0))
+            return  lScope
+
+        if tType == 3:
+            if tCount == 0 or tCount < tIndex:
+                print("invalid para")
+                return tSrcFrame
+            lSrcHeight, lSrcWidth, lRet = tSrcFrame.shape
+            lCentX, lCentY = (lSrcWidth / 2, lSrcHeight / 2)
+            lLeftX, lLeftY = (lCentX - cls._width / 2, lCentY - cls._height / 2)
+            lRightX, lRightY = (lCentX + cls._width / 2, lCentY + cls._height / 2)
+            lUnitX, lUnitY = (lLeftX / tCount, lLeftY / tCount)
+            lIncrX, lIncrY = lUnitX * ( tIndex), lUnitY * (tIndex)
+            lRealLeftX, lRealLeftY = lLeftX - lIncrX, lLeftY - lIncrY
+            lRealRightX, lRealRightY = lRightX + lIncrX, lRightY + lIncrY
+
+            lScope = tSrcFrame[lRealLeftY: lRealRightY, lRealLeftX: lRealRightX]
+            lScope = cv2.resize(lScope, (cls._width, cls._height))
+            lScope = cv2.putText(lScope, "type: 2 scope MAX image", (50, 50), cls._font, 1, (0, 255, 0))
+            return lScope
 
 
 
@@ -127,4 +173,6 @@ if __name__ == "__main__":
     # MainRun.test()
     # MainRun.testCut()
     # MainRun.testWebm()
+    FilmScope.addEffect(2,10)
+    FilmScope.addEffect(3,10)
     FilmScope.showVideo()

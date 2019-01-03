@@ -67,8 +67,8 @@ class Main():
                 if lRet1 is False:
                     time.sleep(2)
                     print (u"current times %d  not found target image device:%s "%( lIndex,lDevice))
-                    Main.isTimeToKill(lDevice)
-                    Main.makeCopy(g_ScreenShoot, g_LastScreenShot)
+                    # Main.isTimeToKill(lDevice)
+                    # Main.makeCopy(g_ScreenShoot, g_LastScreenShot)
                     continue
                 else:
                     AndroidOpt.tapScreen(lx1, ly1,tDevice=lDevice)
