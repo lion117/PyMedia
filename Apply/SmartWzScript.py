@@ -1,0 +1,64 @@
+# -*- coding: utf-8 -*-
+
+import sys, os, time
+sys.path.insert(0,os.path.dirname(os.getcwd()))
+
+import PIL.Image
+
+import  AndroidOpt
+import image.ImageDealing
+import image.ImageMatch
+from  image.SiftMatch import isFindTargetImage, findMatchImgXY
+
+
+class Main():
+    @staticmethod
+    def run():
+        lTartget = u"feature0.png"
+        lScreenShoot = u"screenshot.png"
+        lIndex = 0
+        print (u"begin")
+        while True:
+            AndroidOpt.screenShoot()
+            if os.path.exists(lScreenShoot) is False:
+                print(u"screen shoot error")
+                break
+
+
+            Main.rotate(lScreenShoot)
+            (lRet, lx, ly)  = findMatchImgXY(lTartget,lScreenShoot)
+            if lRet is False:
+                time.sleep(2)
+                print (u"current times %d  skip diff "%( lIndex))
+                continue
+            else:
+                AndroidOpt.tapScreen(lx, ly)
+                time.sleep(2)
+            lIndex +=1
+            print (u" %d Times"%(lIndex))
+
+        print (u"done %d"%(lIndex))
+
+    @staticmethod
+    def isStucked(tBigImg):
+        lFeature0 = u"feature0.png"
+        lFeature1 = u"feature1.png"
+        if isFindTargetImage(lFeature0, tBigImg) is False:
+            print (u"did not found the feature0 ")
+            return False
+        if isFindTargetImage(lFeature1 , tBigImg) is False:
+            print (u"did not found the feature1 ")
+            return False
+        return  True
+
+    @staticmethod
+    def rotate(tBigImg):
+        lImge =  image.ImageDealing.imageRotateByPil(tBigImg)
+        lImge.save(tBigImg)
+
+
+
+
+if __name__ == "__main__":
+    print os.getcwd()
+    Main.run()
