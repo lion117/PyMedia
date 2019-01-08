@@ -36,6 +36,7 @@ def imageRotateByPil(tImage):
     im = Image.open(tImage)
     im_rotate = im.rotate(90,expand=True)
     # im_rotate.show()
+    # raw_input()
     return  im_rotate
 
 
