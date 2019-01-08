@@ -12,10 +12,12 @@ from  image.SiftMatch import isFindTargetImage, findMatchImgXY
 
 
 class Main():
-    @staticmethod
-    def run():
+    @classmethod
+    def run(cls):
         lTartget = u"feature0.png"
         lScreenShoot = u"screenshot.png"
+        lTargetList = [u"feature0.png" , u"feature1.png",u"feature3.png",u"feature4.png",u"feature5.png"]
+
         lIndex = 0
         print (u"begin")
         while True:
@@ -24,32 +26,26 @@ class Main():
                 print(u"screen shoot error")
                 break
 
-
             Main.rotate(lScreenShoot)
-            (lRet, lx, ly)  = findMatchImgXY(lTartget,lScreenShoot)
-            if lRet is False:
-                time.sleep(2)
-                print (u"current times %d  skip diff "%( lIndex))
-                continue
-            else:
-                AndroidOpt.tapScreen(lx, ly)
-                time.sleep(2)
-            lIndex +=1
-            print (u" %d Times"%(lIndex))
+
+            lRet, lx, ly = False, 0 ,0
+
+
+            for itor in lTargetList:
+                (lRet, lx, ly)  = findMatchImgXY(itor,lScreenShoot)
+                if lRet is False:
+                    time.sleep(1)
+                    print (u"current times %d  skip diff "%( lIndex))
+                    continue
+                else:
+                    AndroidOpt.tapScreen(lx, ly)
+                    time.sleep(2)
+                lIndex +=1
+                print (u" %d Times"%(lIndex))
 
         print (u"done %d"%(lIndex))
 
-    @staticmethod
-    def isStucked(tBigImg):
-        lFeature0 = u"feature0.png"
-        lFeature1 = u"feature1.png"
-        if isFindTargetImage(lFeature0, tBigImg) is False:
-            print (u"did not found the feature0 ")
-            return False
-        if isFindTargetImage(lFeature1 , tBigImg) is False:
-            print (u"did not found the feature1 ")
-            return False
-        return  True
+
 
     @staticmethod
     def rotate(tBigImg):
