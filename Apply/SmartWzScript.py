@@ -17,10 +17,11 @@ class Main():
         lTartget = u"feature0.png"
         lScreenShoot = u"screenshot.png"
         # lTargetList = [u"feature0.png" , u"feature1.png",u"feature3.png",u"feature4.png",u"feature5.png"]
-        lTargetList = [u"feature0.png" ,u"feature3.png",u"feature4.png",u"feature5.png"]
+        lTargetList = [u"feature0.png" ,u"feature2.png",u"feature3.png",u"feature4.png",u"feature5.png"]
 
         lIndex = 0
         print (u"begin")
+        lLastTick = 0
         while True:
             AndroidOpt.screenShoot()
             if os.path.exists(lScreenShoot) is False:
@@ -33,12 +34,26 @@ class Main():
 
 
             for itor in lTargetList:
-                (lRet, lx, ly)  = findMatchImgXY(itor,lScreenShoot)
+                try:
+                    (lRet, lx, ly)  = findMatchImgXY(itor,lScreenShoot)
+                except Exception,exInfo:
+                    print (u"excepiton %s"%(exInfo))
+                    continue
                 if lRet is False:
                     time.sleep(1)
                     print (u"current times %d  skip diff "%( lIndex))
                     continue
                 else:
+                    if itor == u"feature2.png" :
+                        lCurTick =  time.time()
+                        if lCurTick - lLastTick < 70:
+                            print(u"auto had been clicked")
+                            continue
+                        else:
+                            lLastTick = time.time()
+                    if itor == u"feature0.png" :
+                        lCurTick = 0
+
                     AndroidOpt.tapScreen(lx, ly)
                     time.sleep(2)
                 lIndex +=1
