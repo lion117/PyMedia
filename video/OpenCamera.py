@@ -7,7 +7,7 @@ import cv2
 
 
 def OpenCamera():
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     while(1):
         # get a frame
         ret, frame = cap.read()
@@ -72,7 +72,7 @@ def convertCvToPil(tImg):
     return pil_im
 
 
-class MainTest():
+class MainRun():
     @staticmethod
     def testOpenCamera():
         OpenCamera()
@@ -90,4 +90,5 @@ if __name__ == "__main__":
     print os.getcwd()
     # MainTest.testMutilScreen()
     # MainTest.testOpenMultiCamera()
-    OpenMultiCameras()
+    # MainTest.testOpenCamera()
+    OpenCamera()
