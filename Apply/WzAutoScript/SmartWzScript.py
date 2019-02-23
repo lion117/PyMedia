@@ -3,13 +3,11 @@
 import sys, os, time
 sys.path.insert(0,os.path.dirname(os.getcwd()))
 
-import PIL.Image
-
 import  AndroidOpt
 import image.ImageDealing
 import image.ImageMatch
-from  image.SiftMatch import isFindTargetImage, findMatchImgXY
-
+from  image.SiftMatch import findMatchImgXY
+import cv2
 
 class Main():
     @classmethod
@@ -18,6 +16,8 @@ class Main():
         lScreenShoot = u"screenshot.png"
         # lTargetList = [u"feature0.png" , u"feature1.png",u"feature3.png",u"feature4.png",u"feature5.png"]
         lTargetList = [u"feature0.png" ,u"feature2.png",u"feature3.png",u"feature4.png",u"feature5.png"]
+        # lTargetList = [u"feature2.png"]
+
 
         lIndex = 0
         print (u"begin")
@@ -45,18 +45,26 @@ class Main():
                     continue
                 else:
                     if itor == u"feature2.png" :
-                        lCurTick =  time.time()
-                        if lCurTick - lLastTick < 70:
-                            print(u"auto had been clicked")
+                        lSrcImg = cv2.imread(lScreenShoot)
+                        lX0 , lY0= lx-30, ly-30
+                        lX1, lY1 = lx+30,ly+30
+                        lCutImg = lSrcImg[lY0:lY1, lX0:lX1]
+                        lMean = Main.calAverage(lCutImg)
+                        if lMean < 150:
+                            AndroidOpt.tapScreen(lx, ly)
+                            time.sleep(2)
+                            print(u"++++")
                             continue
                         else:
-                            lLastTick = time.time()
-                    if itor == u"feature0.png" :
-                        lCurTick = 0
+                            print(u"----")
+                            continue
+                    elif itor == u"feature0.png":
+                        lIndex +=1
+
 
                     AndroidOpt.tapScreen(lx, ly)
                     time.sleep(2)
-                lIndex +=1
+
                 print (u" %d Times"%(lIndex))
 
         print (u"done %d"%(lIndex))
@@ -68,6 +76,12 @@ class Main():
         lImge =  image.ImageDealing.imageRotateByPil(tBigImg)
         lImge.save(tBigImg)
 
+
+    @classmethod
+    def calAverage(cls,tSrc):
+        mean = cv2.mean(cv2.split(tSrc)[0])[0]
+        print mean
+        return mean
 
 
 

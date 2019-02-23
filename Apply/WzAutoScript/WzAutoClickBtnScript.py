@@ -3,8 +3,6 @@
 import sys, os, time
 sys.path.insert(0,os.path.dirname(os.getcwd()))
 
-import PIL.Image
-
 import  AndroidOpt
 import image.ImageDealing
 import image.ImageMatch
