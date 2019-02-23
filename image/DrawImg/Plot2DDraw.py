@@ -5,7 +5,7 @@ Date:  2019/2/2
 Email:	lion_117@126.com
 All Rights Reserved Licensed under the Apache License
 """
-
+import cv2
 import os
 import  matplotlib.pyplot as plt
 import  numpy
@@ -70,6 +70,22 @@ class MainRun():
 
     @classmethod
     def runDistGrayImag(cls):
+        lImgObj = cv2.imread(cls.lImg0,cv2.IMREAD_GRAYSCALE )
+        lImgArr = numpy.array(lImgObj)
+        plt.figure()
+        plt.hist(lImgArr, bins= 256, facecolor='g')
+        plt.show()
+
+
+    @classmethod
+    def runPltImgShow(cls):
+        lImgObj = cv2.imread(cls.lImg0,cv2.IMREAD_GRAYSCALE )
+        lImgArr = numpy.array(lImgObj)
+        plt.figure()
+        plt.imshow(lImgArr)
+        plt.show()
+
+
 
 
 
@@ -80,4 +96,6 @@ class MainRun():
 if __name__ == '__main__':
     # MainRun.runDemo()
     # MainRun.runBaic2d()
-    MainRun.runBomb()
+    # MainRun.runBomb()
+    # MainRun.runDistGrayImag()
+    MainRun.runPltImgShow()
