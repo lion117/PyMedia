@@ -119,10 +119,51 @@ class MainRun():
 
 
 
+    @classmethod
+    def Compare480pVs720p(cls):
+        cap = cv2.VideoCapture(2)
+        if cap.isOpened():
+            lHeight = 720
+            lWidth = 960
+            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, lHeight)
+            cap.set(cv2.CAP_PROP_FRAME_WIDTH, lWidth)
+
+
+        while (1):
+            # get a frame
+            ret, frame = cap.read()
+            cv2.imshow("origin", frame)
+            (lCut,lScope) = MainRun.DealImg(frame)
+            cv2.imshow("cut", lCut)
+            cv2.imshow("scope",lScope)
+
+            if cv2.waitKey(5) & 0xFF == ord('q'):
+                break
+
+        cap.release()
+        cv2.destroyAllWindows()
+
+
+
+    @classmethod
+    def DealImg(cls,tFrame):
+        lTopY = 120
+        lTopX = 160
+        lButtonX = 800
+        lButtonY = 600
+        lScopeImg = cv2.resize(tFrame, (640, 480))
+        lCutImg = tFrame[lTopY: lButtonY , lTopX : lButtonX]
+
+
+        return  (lCutImg,lScopeImg)
+
+
+
 
 if __name__ == "__main__":
     print(os.getcwd())
     # MainRun.runVideo()
     # MainRun.run1080pVideoPhone()
     # MainRun.run1080pVideoPhone()
-    MainRun.runSaveVideoForPhone()
+    # MainRun.runSaveVideoForPhone()
+    MainRun.Compare480pVs720p()
