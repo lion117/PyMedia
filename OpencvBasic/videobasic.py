@@ -74,6 +74,38 @@ class MainRun():
 
         pass
 
+    @staticmethod
+    def testCameraFormatDiff():
+        lCap = cv2.VideoCapture(3)
+        if lCap.isOpened() is False:
+            print(u"camera is not opened")
+            return
+
+        lCap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        lCap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        lCap.set(cv2.CAP_PROP_FPS, 30)
+
+        lCap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter.fourcc('M','J','P','G'))
+        lRet, lFrameMJPG if lRet is False:
+                    break
+
+        # lCodec = cv2.VideoWriter_fourcc(*'WMV2')
+        # lWriter = cv2.VideoWriter('camp.wmv', lCodec,30,(1280,720))
+
+        while True:
+
+            lWriter.write(lFrame)
+            cv2.imshow('test', lFrame)
+            if cv2.waitKey(33) > -1:
+                break
+
+        lCap.release()
+        lWriter.release()
+        cv2.destroyAllWindows()
+
+        pass
+
+
 
 
 
