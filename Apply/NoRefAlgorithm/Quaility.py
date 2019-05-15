@@ -11,6 +11,9 @@ class MainRun():
     _imggirl1080p = os.path.join(_tarDir, u"ShareMedia/Images/girl1080p.png")
     _imgboy720p = os.path.join(_tarDir, u"ShareMedia/Images/boy720p.png")
     _imgboy1080p = os.path.join(_tarDir, u"ShareMedia/Images/boy1080p.png")
+    _imgmomo = os.path.join(_tarDir, u"ShareMedia/Images/momo.jpg")
+    _imgmomo101 = os.path.join(_tarDir, u"ShareMedia/Images/momo_101.jpg")
+    _imgmomo010 = os.path.join(_tarDir, u"ShareMedia/Images/momo_010.jpg")
 
     @classmethod
     def runTest(cls):
@@ -29,16 +32,29 @@ class MainRun():
         v720p1,vgirl720 = MainRun.GetCannyMax(imggirl720p)
         v1080p1,vgirl1080 = MainRun.GetCannyMax(imggirl1080p)
         print("girl 720:%f, 1080p:%f"%(v720p1, v1080p1))
+
+        imgmomo = cv2.imread(cls._imgmomo)
+        imgmomo101 = cv2.imread(cls._imgmomo101)
+        imgmomo010 = cv2.imread(cls._imgmomo010)
+        vmomo, vCannymomo = MainRun.GetCannyMax(imgmomo)
+        vmomo101, vCannymomo101 = MainRun.GetCannyMax(imgmomo101)
+        vmomo010, vCannymomo010 = MainRun.GetCannyMax(imgmomo010)
+        print("momo  0:%f, 101:%f, 010:%f"%(vmomo, vmomo101, vmomo010))
+
+
         cv2.imwrite("canny_cboy720.png",cboy720)
         cv2.imwrite("canny_cboy1080.png",cboy1080)
         cv2.imwrite("canny_vgirl720.png",vgirl720)
         cv2.imwrite("canny_vgirl1080.png",vgirl1080)
+        cv2.imwrite("canny_vmomo.png",vCannymomo)
+        cv2.imwrite("canny_vmomo101.png",vCannymomo101)
+        cv2.imwrite("canny_vmomo010.png",vCannymomo010)
 
 
 
     @classmethod
     def GetCannyMax(cls, tImg):
-        # img = cv2.GaussianBlur(tImg, (3, 3), 0)
+        img = cv2.GaussianBlur(tImg, (3, 3), 0)
         # img = np.array(img,dtype=np.int8)
         yuv420= cv2.cvtColor(tImg, cv2.COLOR_BGR2YUV)
         yMat,uMat,vMat = cv2.split(yuv420)

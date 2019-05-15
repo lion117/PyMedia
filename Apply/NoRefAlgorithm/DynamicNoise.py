@@ -46,7 +46,10 @@ class MainRun():
                 lIndex += 1
                 lBuff = np.frombuffer(lBuff, dtype='uint8')
                 lImgMat = np.reshape(lBuff, (tHeight, tWidth, 4))
-                lImgArr.append(lImgMat)
+                ImgY, ImgU, ImgV = cv2.split(cv2.cvtColor(lImgMat, cv2.COLOR_BGR2YCrCb))
+                lImgArr.append(ImgV)
+                if lIndex > 29:
+                    break
         return lImgArr
 
     @classmethod
@@ -67,6 +70,23 @@ class MainRun():
             cv2.waitKey(1000)
         cv2.destroyAllWindows()
 
+    @classmethod
+    def testDataCamera(cls):
+        lwidth = 960
+        lheight = 720
+        logicFile = os.path.join(cls._tarDir, u"ShareMedia/video/cameraData_logic.rgba")
+        bdbaFile = os.path.join(cls._tarDir, u"ShareMedia/video/cameraData_bdba.rgba")
+
+        lArrayImgLogic = MainRun.readRgba(logicFile, lwidth, lheight, 4)
+        lVarMatLogic = np.var(np.vstack([i.ravel() for i in lArrayImgLogic]), ddof=1, axis=0)
+        lMeanLogic = np.mean(lVarMatLogic)
+
+        lArrayImgBdba = MainRun.readRgba(bdbaFile, lwidth, lheight, 4)
+        lVarMatBdba = np.var(np.vstack([i.ravel() for i in lArrayImgBdba]), ddof=1, axis=0)
+        lMeanBdba = np.mean(lVarMatBdba)
+
+        print("logic:%f,  bdba:%f"%(lMeanLogic, lMeanBdba))
+
 
 
 
@@ -74,4 +94,5 @@ if __name__ == "__main__":
     MainRun.runTest()
     # MainRun.testMat()
     # MainRun.testReadRgbaFile()
-    MainRun.calculateNoisy()
+    # MainRun.calculateNoisy()
+    MainRun.testDataCamera()
