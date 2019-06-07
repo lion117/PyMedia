@@ -4,12 +4,10 @@ import sys, os, time
 lParentDir = os.path.dirname(os.getcwd())
 sys.path.insert(0,lParentDir)
 
-import PIL.Image
-
 import  AndroidOpt
-import image.ImageDealing
-from image.ImageMatch import isImageDiffMuch
-from  image.SiftMatch import isFindTargetImage, findMatchImgXY
+import image.ImgFeature.ImageRotate
+from image.ImgFeature.ImageMatch import isImageDiffMuch
+from image.ImgFeature.SiftMatch import findMatchImgXY
 
 g_ticks =0
 g_LastScreenShot = u"LastSceenshot.png"

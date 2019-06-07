@@ -83,9 +83,9 @@ class MainRun():
 
 if __name__ == "__main__":
     print os.getcwd()
-    # MainTest.testScreenShoot()
+    MainRun.testScreenShoot()
     # MainTest.testClick()
     # fetchEmulatorDevice()
     # MainTest.testAdbDevice()
-    killWz(None)
-    MainRun.runCloseAndroid()
+    # killWz(None)
+    # MainRun.runCloseAndroid()
