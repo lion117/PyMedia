@@ -51,6 +51,19 @@ class MainRun():
         cv2.imwrite("canny_vmomo010.png",vCannymomo010)
 
 
+    @classmethod
+    def calculateSrc(cls):
+        lImg1 = os.path.join(os.getcwd(), u"1.png")
+        lImg2 = os.path.join(os.getcwd(), u"2.png")
+
+        lImg1Obj = cv2.imread(lImg1)
+        lImg2Obj = cv2.imread(lImg2)
+        v720p, cobj1 = MainRun.GetCannyMax(lImg1Obj)
+        v1080p, cobj2 = MainRun.GetCannyMax(lImg2Obj)
+        print("1: 720:%f, 2:%f"%(v720p, v1080p))
+
+        cv2.imwrite("canny_1.png",cobj1)
+        cv2.imwrite("canny_2.png",cobj2)
 
     @classmethod
     def GetCannyMax(cls, tImg):
@@ -63,6 +76,18 @@ class MainRun():
         # cv2.waitKey(2000)
         return (np.mean(canny), canny)
 
+    @classmethod
+    def computeCannyApi(cls):
+        pic1 = os.path.join(os.getcwd(), u"540x960.png")
+        pic2 = os.path.join(os.getcwd(), u"720x1280.png")
+
+        imgObj1 = cv2.imread(pic1)
+        imgObj2 = cv2.imread(pic2)
+        value1, img1 = MainRun.GetCannyMax(imgObj1)
+        value2, img2 = MainRun.GetCannyMax(imgObj2)
+        print("pic1:%f, pic2:%f" % (value1, value2))
+        cv2.imwrite("540x960_out.png", img1)
+        cv2.imwrite("720x1280_out.png", img2)
 
 
 
@@ -71,4 +96,6 @@ class MainRun():
 
 if __name__ == "__main__":
     MainRun.runTest()
-    MainRun.computeCanny()
+    # MainRun.computeCanny()
+    # MainRun.calculateSrc()
+    MainRun.computeCannyApi()
