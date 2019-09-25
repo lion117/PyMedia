@@ -3,7 +3,7 @@
 import sys, os, time
 import  cv2
 import  Queue
-
+from VideoLib.SaveVideo import SaveVideoMgr
 
 
 
@@ -62,6 +62,7 @@ class FilmScope():
     _effectType = -1
     _videoCounts  = 0
     _videoIndex  = -1
+    _vWriter = SaveVideoMgr(_width,_height, os.path.join(os.getcwd(),"movie.wmv"),25)
 
     @classmethod
     def showVideo(cls):
@@ -72,16 +73,17 @@ class FilmScope():
             if lRet is False:
                 break
             lScope = cls.addFilmEffect(lFrame)
-            cv2.imshow('720p',lScope)
-            cv2.imshow('8k', cv2.resize(lFrame,(cls._width,cls._height)))
-            if cv2.waitKey(5) > -1:
+            cls._vWriter.write(lScope)
+            # cv2.imshow('720p',lScope)
+            # cv2.imshow('8k', cv2.resize(lFrame,(cls._width,cls._height)))
+            if cv2.waitKey(1) > -1:
                 break
             print("video frame index %d"%(lIndex))
             lIndex +=1
 
-
-        cv2.release()
-        cv2.destroyAllWindows()
+        cls._vWriter.close()
+        # cv2.release()
+        # cv2.destroyAllWindows()
 
     @classmethod
     def addEffect(cls, tEffectType, tTime):
@@ -95,7 +97,7 @@ class FilmScope():
         if cls._effectType  ==  -1:
             lItem = cls._effectQueue.get()
             cls._effectType = lItem[0]
-            cls._videoCounts = lItem[1]*24
+            cls._videoCounts = lItem[1]*25
             cls._videoIndex = 0
 
         lDestFrame = cls.videoEffect(tSrcFrame , cls._effectType ,cls._videoCounts,cls._videoIndex)
@@ -173,6 +175,10 @@ if __name__ == "__main__":
     # MainRun.test()
     # MainRun.testCut()
     # MainRun.testWebm()
+    FilmScope.addEffect(0,10)
+    FilmScope.addEffect(2,10)
+    FilmScope.addEffect(3,10)
+    FilmScope.addEffect(0,10)
     FilmScope.addEffect(2,10)
     FilmScope.addEffect(3,10)
     FilmScope.showVideo()
