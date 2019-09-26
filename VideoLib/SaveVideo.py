@@ -13,8 +13,8 @@ class MainRun():
 
 class SaveVideoMgr():
     def __init__(self, tW, tH, tDstFile,tFrameRate = 24):
-        lCodec = cv2.VideoWriter_fourcc(*'WMV2')
-        self.vWriter = cv2.VideoWriter(tDstFile, lCodec, 24, (tW, tH)) # wmv
+        lCodec = cv2.VideoWriter_fourcc(*'MP4V')
+        self.vWriter = cv2.VideoWriter(tDstFile, lCodec, tFrameRate, (tW, tH)) # wmv
 
     def write(self, tFrame):
         self.vWriter.write(tFrame)
