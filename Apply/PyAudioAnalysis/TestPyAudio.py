@@ -22,8 +22,8 @@ class MainRun():
 
     @classmethod
     def testChroma(cls):
-
-        [Fs, x] = audioBasicIO.readAudioFile(cls._audio)
+        lFrameFile = os.path.join(os.getcwd(), "firstFrame.pcm")
+        [Fs, x] = audioBasicIO.readAudioFile(lFrameFile)
         F = audioFeatureExtraction.stFeatureExtraction(x, Fs, 0.050*Fs, 0.025*Fs)
         # plt.subplot(2,1,1)
 
@@ -36,10 +36,10 @@ class MainRun():
 
 if __name__ == "__main__":
     # MainRun.runTest()
-    # MainRun.testChroma()
-    a = numpy.array([1,2,3,4,5,6,7,8]).reshape([-1,2])
-    b = a[:,0]
-    print(a)
-    print(b)
-    numpy.fft.rfft()
+    MainRun.testChroma()
+    # a = numpy.array([1,2,3,4,5,6,7,8]).reshape([-1,2])
+    # b = a[:,0]
+    # print(a)
+    # print(b)
+    # numpy.fft.rfft()
 
