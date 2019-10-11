@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import sys, os, time
+import cv2, numpy
 import logging
 
 gLogger = logging.getLogger("pylog")
 gLogger.setLevel(logging.INFO)
-rf_handler = logging.StreamHandler(sys.stderr)#默认是sys.stderr
+rf_handler = logging.StreamHandler(sys.stderr)  #默认是sys.stderr
 rf_handler.setLevel(logging.DEBUG)
 rf_handler.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 
@@ -16,6 +17,7 @@ f_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(filena
 gLogger.addHandler(rf_handler)
 gLogger.addHandler(f_handler)
 
+
 class MainRun():
     _curDir = os.getcwd()
     _tarDir = os.path.dirname(os.path.dirname(_curDir))
@@ -24,8 +26,6 @@ class MainRun():
     @classmethod
     def runTest(cls):
         gLogger.info(u"hello world")
-
-
 
 
 if __name__ == "__main__":

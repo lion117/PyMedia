@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import sys, os, time
+import cv2, numpy
 import logging
+import matplotlib.pyplot as plt
 
 gLogger = logging.getLogger("pylog")
 gLogger.setLevel(logging.INFO)
-rf_handler = logging.StreamHandler(sys.stderr)#默认是sys.stderr
+rf_handler = logging.StreamHandler(sys.stderr)  #默认是sys.stderr
 rf_handler.setLevel(logging.DEBUG)
 rf_handler.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
 
@@ -15,6 +17,7 @@ f_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(filena
 
 gLogger.addHandler(rf_handler)
 gLogger.addHandler(f_handler)
+
 
 class MainRun():
     _curDir = os.getcwd()
@@ -26,7 +29,15 @@ class MainRun():
         gLogger.info(u"hello world")
 
 
+    @classmethod
+    def testNumpyMath(cls):
+        lx = numpy.linspace(0.000001,100,num= 1000)
+        ly = numpy.log10(lx)
+        plt.plot(lx,ly)
+        plt.show()
+
 
 
 if __name__ == "__main__":
     MainRun.runTest()
+    MainRun.testNumpyMath()

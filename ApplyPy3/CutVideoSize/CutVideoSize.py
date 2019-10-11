@@ -197,8 +197,8 @@ class MainRun():
     @classmethod
     def testVideoBatRotate(cls):
         lListVideo = []
-        # lListVideo.append("ayouyou.mp4")
-        # lListVideo.append("guxiaojie.mp4")
+        lListVideo.append("ayouyou.mp4")
+        lListVideo.append("guxiaojie.mp4")
         lListVideo.append("baijiajun.mp4")
         lListVideo.append("chengxuexun.mp4")
         lListVideo.append("dahuang.mp4")
@@ -207,9 +207,9 @@ class MainRun():
 
 
 
-        lCutPerCent  =(0,    1,      0.15,   0.55)
+        lCutPerCent  =(0,    1,      0,   1)
         for itor in lListVideo:
-            lDstFile =  str.format("out_%s.mp4"%(itor))
+            lDstFile =  str.format("out_origin_%s.mp4"%(itor))
             MainRun.videoScopeRotate(lCutPerCent[0],lCutPerCent[1],lCutPerCent[2],lCutPerCent[3],itor,lDstFile,50)
 
 
